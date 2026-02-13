@@ -1,0 +1,9 @@
+[2026-02-12 22:30:52,674] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:30:54,073] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:30:54,105] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:30:54,107] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:30:58,913] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:30:58,915] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:31:03,250] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:31:03,250] utility.logger - INFO - error while intitialising to vector db
+[2026-02-12 22:31:03,250] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\faiss_db.py] line number [26] error message ['Embedder' object has no attribute 'embed_query']

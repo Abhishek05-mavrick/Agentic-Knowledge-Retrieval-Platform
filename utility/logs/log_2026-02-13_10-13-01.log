@@ -1,0 +1,22 @@
+[2026-02-13 10:13:01,722] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-13 10:13:01,883] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-13 10:13:01,931] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:13:01,934] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:13:07,893] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:13:07,895] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:13:12,807] utility.logger - INFO - the FAISS DB started
+[2026-02-13 10:13:12,979] utility.logger - INFO - Loading DB from vector_db
+[2026-02-13 10:13:12,984] utility.logger - INFO - DB loaded successfully from vector_db
+[2026-02-13 10:13:13,922] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:13:13,924] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:13:18,440] utility.logger - INFO - the FAISS DB started
+[2026-02-13 10:13:18,462] utility.logger - INFO - Loading DB from vector_db
+[2026-02-13 10:13:18,463] utility.logger - INFO - DB loaded successfully from vector_db
+[2026-02-13 10:13:18,465] utility.logger - INFO - Starting RAG application
+[2026-02-13 10:13:18,491] werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.180.25.44:5000
+[2026-02-13 10:13:18,492] werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2026-02-13 10:13:18,495] werkzeug - INFO -  * Restarting with stat
+[2026-02-13 10:18:32,138] werkzeug - INFO -  * Restarting with stat

@@ -1,0 +1,47 @@
+[2026-02-13 10:18:52,131] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-13 10:18:52,209] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-13 10:18:52,265] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:18:52,270] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:18:59,458] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:18:59,462] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:19:04,442] utility.logger - INFO - the FAISS DB started
+[2026-02-13 10:19:04,518] utility.logger - INFO - Loading DB from vector_db
+[2026-02-13 10:19:04,523] utility.logger - INFO - DB loaded successfully from vector_db
+[2026-02-13 10:19:06,716] utility.logger - INFO - initializing embedding model
+[2026-02-13 10:19:06,722] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-13 10:19:11,623] utility.logger - INFO - the FAISS DB started
+[2026-02-13 10:19:11,670] utility.logger - INFO - Loading DB from vector_db
+[2026-02-13 10:19:11,672] utility.logger - INFO - DB loaded successfully from vector_db
+[2026-02-13 10:19:11,677] utility.logger - INFO - Starting RAG application
+[2026-02-13 10:19:11,697] werkzeug - WARNING -  * Debugger is active!
+[2026-02-13 10:19:11,713] werkzeug - INFO -  * Debugger PIN: 130-625-207
+[2026-02-13 10:19:12,860] utility.logger - INFO - Processing query: what is the topic of this document ?
+[2026-02-13 10:19:12,860] utility.logger - INFO - Starting RAG generation flow
+[2026-02-13 10:19:12,860] utility.logger - INFO - retrieval started
+[2026-02-13 10:19:12,883] werkzeug - INFO - 127.0.0.1 - - [13/Feb/2026 10:19:12] "GET /query HTTP/1.1" 200 -
+[2026-02-13 10:19:12,945] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-13 10:19:12,945] utility.logger - INFO - Document content length: 858
+[2026-02-13 10:19:12,946] utility.logger - INFO - Document content length: 180
+[2026-02-13 10:19:12,946] utility.logger - INFO - Document content length: 180
+[2026-02-13 10:19:12,946] utility.logger - INFO - Document content length: 830
+[2026-02-13 10:19:12,946] utility.logger - INFO - After filtering: 4 documents
+[2026-02-13 10:19:12,946] utility.logger - INFO - Documents retrieved: 4
+[2026-02-13 10:19:12,947] utility.logger - INFO - prompt engineering started
+[2026-02-13 10:19:12,947] utility.logger - INFO - Invoking LLM
+[2026-02-13 10:19:14,379] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-13 10:19:14,441] werkzeug - INFO - 127.0.0.1 - - [13/Feb/2026 10:19:14] "GET /results?q=what%20is%20the%20topic%20of%20this%20document%20?&type=search HTTP/1.1" 200 -
+[2026-02-13 10:19:31,854] utility.logger - INFO - Processing query: tell me about the author of the book
+[2026-02-13 10:19:31,854] utility.logger - INFO - Starting RAG generation flow
+[2026-02-13 10:19:31,855] utility.logger - INFO - retrieval started
+[2026-02-13 10:19:31,891] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-13 10:19:31,891] utility.logger - INFO - Document content length: 180
+[2026-02-13 10:19:31,891] utility.logger - INFO - Document content length: 180
+[2026-02-13 10:19:31,891] utility.logger - INFO - Document content length: 858
+[2026-02-13 10:19:31,891] utility.logger - INFO - Document content length: 701
+[2026-02-13 10:19:31,891] utility.logger - INFO - After filtering: 4 documents
+[2026-02-13 10:19:31,892] utility.logger - INFO - Documents retrieved: 4
+[2026-02-13 10:19:31,892] utility.logger - INFO - prompt engineering started
+[2026-02-13 10:19:31,892] utility.logger - INFO - Invoking LLM
+[2026-02-13 10:19:33,118] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-13 10:19:33,122] werkzeug - INFO - 127.0.0.1 - - [13/Feb/2026 10:19:33] "GET /results?q=tell%20me%20about%20the%20author%20of%20the%20book&type=search HTTP/1.1" 200 -
+[2026-02-13 10:19:40,734] werkzeug - INFO - 127.0.0.1 - - [13/Feb/2026 10:19:40] "GET /query HTTP/1.1" 200 -

@@ -1,0 +1,82 @@
+[2026-02-12 23:06:04,556] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 23:06:04,577] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 23:06:04,593] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:06:04,594] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:06:08,873] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:06:08,874] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:06:12,826] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:06:12,857] utility.logger - INFO - Loading DB from vector_db
+[2026-02-12 23:06:12,858] utility.logger - INFO - DB loaded successfully from vector_db
+[2026-02-12 23:06:13,585] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 23:06:13,856] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:06:13,858] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:06:17,666] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:06:17,674] utility.logger - INFO - inserting into db
+[2026-02-12 23:06:17,811] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 23:06:17,814] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db
+[2026-02-12 23:06:17,827] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:06:17,828] utility.logger - INFO - retrieval started
+[2026-02-12 23:06:17,839] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-12 23:06:17,839] utility.logger - INFO - Document content length: 180
+[2026-02-12 23:06:17,839] utility.logger - INFO - Document content length: 2347
+[2026-02-12 23:06:17,839] utility.logger - INFO - Document content length: 2141
+[2026-02-12 23:06:17,839] utility.logger - INFO - Document content length: 2331
+[2026-02-12 23:06:17,839] utility.logger - INFO - After filtering: 4 documents
+[2026-02-12 23:06:17,839] utility.logger - INFO - Documents retrieved: 4
+[2026-02-12 23:06:17,839] utility.logger - INFO - prompt engineering started
+[2026-02-12 23:06:17,839] utility.logger - INFO - Invoking LLM
+[2026-02-12 23:06:19,169] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 23:06:19,192] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:06:19,193] utility.logger - INFO - retrieval started
+[2026-02-12 23:06:19,207] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-12 23:06:19,207] utility.logger - INFO - Document content length: 2310
+[2026-02-12 23:06:19,207] utility.logger - INFO - Document content length: 2141
+[2026-02-12 23:06:19,207] utility.logger - INFO - Document content length: 2331
+[2026-02-12 23:06:19,207] utility.logger - INFO - Document content length: 2347
+[2026-02-12 23:06:19,207] utility.logger - INFO - After filtering: 4 documents
+[2026-02-12 23:06:19,207] utility.logger - INFO - Documents retrieved: 4
+[2026-02-12 23:06:19,207] utility.logger - INFO - prompt engineering started
+[2026-02-12 23:06:19,207] utility.logger - INFO - Invoking LLM
+[2026-02-12 23:06:22,138] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 23:06:22,142] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:06:22,142] utility.logger - INFO - retrieval started
+[2026-02-12 23:06:22,158] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-12 23:06:22,158] utility.logger - INFO - Document content length: 2141
+[2026-02-12 23:06:22,159] utility.logger - INFO - Document content length: 2347
+[2026-02-12 23:06:22,159] utility.logger - INFO - Document content length: 180
+[2026-02-12 23:06:22,159] utility.logger - INFO - Document content length: 1482
+[2026-02-12 23:06:22,159] utility.logger - INFO - After filtering: 4 documents
+[2026-02-12 23:06:22,159] utility.logger - INFO - Documents retrieved: 4
+[2026-02-12 23:06:22,159] utility.logger - INFO - prompt engineering started
+[2026-02-12 23:06:22,159] utility.logger - INFO - Invoking LLM
+[2026-02-12 23:06:22,203] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-02-12 23:06:22,203] groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 20.000000 seconds
+[2026-02-12 23:06:44,053] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 23:06:44,056] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:06:44,056] utility.logger - INFO - retrieval started
+[2026-02-12 23:06:44,072] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-12 23:06:44,073] utility.logger - INFO - Document content length: 2141
+[2026-02-12 23:06:44,073] utility.logger - INFO - Document content length: 2347
+[2026-02-12 23:06:44,073] utility.logger - INFO - Document content length: 1482
+[2026-02-12 23:06:44,073] utility.logger - INFO - Document content length: 2310
+[2026-02-12 23:06:44,073] utility.logger - INFO - After filtering: 4 documents
+[2026-02-12 23:06:44,073] utility.logger - INFO - Documents retrieved: 4
+[2026-02-12 23:06:44,074] utility.logger - INFO - prompt engineering started
+[2026-02-12 23:06:44,074] utility.logger - INFO - Invoking LLM
+[2026-02-12 23:06:44,122] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-02-12 23:06:44,123] groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 25.000000 seconds
+[2026-02-12 23:07:11,702] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 23:07:11,706] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:07:11,706] utility.logger - INFO - retrieval started
+[2026-02-12 23:07:11,723] utility.logger - INFO - Raw results retrieved: 4
+[2026-02-12 23:07:11,723] utility.logger - INFO - Document content length: 2347
+[2026-02-12 23:07:11,723] utility.logger - INFO - Document content length: 1482
+[2026-02-12 23:07:11,723] utility.logger - INFO - Document content length: 2141
+[2026-02-12 23:07:11,723] utility.logger - INFO - Document content length: 2331
+[2026-02-12 23:07:11,723] utility.logger - INFO - After filtering: 4 documents
+[2026-02-12 23:07:11,724] utility.logger - INFO - Documents retrieved: 4
+[2026-02-12 23:07:11,724] utility.logger - INFO - prompt engineering started
+[2026-02-12 23:07:11,724] utility.logger - INFO - Invoking LLM
+[2026-02-12 23:07:11,766] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2026-02-12 23:07:11,767] groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 25.000000 seconds
+[2026-02-12 23:07:39,352] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

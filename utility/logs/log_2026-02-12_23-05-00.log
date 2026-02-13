@@ -1,0 +1,41 @@
+[2026-02-12 23:05:00,627] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 23:05:00,650] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 23:05:00,665] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:05:00,666] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:05:08,565] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:05:08,566] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:05:12,466] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:05:12,503] utility.logger - INFO - Loading DB from vector_db
+[2026-02-12 23:05:12,507] utility.logger - INFO - failed to load DB from vector_db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\third-party\faiss\faiss\impl\io.cpp:70: Error: 'f' failed: could not open vector_db\index.faiss for reading: No such file or directory
+[2026-02-12 23:05:13,200] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 23:05:13,459] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:05:13,460] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:05:17,354] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:05:17,365] utility.logger - INFO - inserting into db
+[2026-02-12 23:05:17,498] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 23:05:17,501] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db
+[2026-02-12 23:05:17,514] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:05:17,514] utility.logger - INFO - retrieval started
+[2026-02-12 23:05:17,527] utility.logger - INFO - Raw results retrieved: 0
+[2026-02-12 23:05:17,527] utility.logger - INFO - After filtering: 0 documents
+[2026-02-12 23:05:17,527] utility.logger - INFO - No documents found
+[2026-02-12 23:05:17,528] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:05:17,528] utility.logger - INFO - retrieval started
+[2026-02-12 23:05:17,536] utility.logger - INFO - Raw results retrieved: 0
+[2026-02-12 23:05:17,536] utility.logger - INFO - After filtering: 0 documents
+[2026-02-12 23:05:17,536] utility.logger - INFO - No documents found
+[2026-02-12 23:05:17,537] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:05:17,537] utility.logger - INFO - retrieval started
+[2026-02-12 23:05:17,548] utility.logger - INFO - Raw results retrieved: 0
+[2026-02-12 23:05:17,548] utility.logger - INFO - After filtering: 0 documents
+[2026-02-12 23:05:17,548] utility.logger - INFO - No documents found
+[2026-02-12 23:05:17,549] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:05:17,549] utility.logger - INFO - retrieval started
+[2026-02-12 23:05:17,559] utility.logger - INFO - Raw results retrieved: 0
+[2026-02-12 23:05:17,559] utility.logger - INFO - After filtering: 0 documents
+[2026-02-12 23:05:17,560] utility.logger - INFO - No documents found
+[2026-02-12 23:05:17,561] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:05:17,561] utility.logger - INFO - retrieval started
+[2026-02-12 23:05:17,569] utility.logger - INFO - Raw results retrieved: 0
+[2026-02-12 23:05:17,569] utility.logger - INFO - After filtering: 0 documents
+[2026-02-12 23:05:17,569] utility.logger - INFO - No documents found

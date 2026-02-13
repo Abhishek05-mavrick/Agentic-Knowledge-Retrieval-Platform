@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-File & URL Uploader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px 24px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0055aa;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: -8px;
+            margin-bottom: 16px;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+        .success {
+            background: #22c55e;
+            color: #022c22;
+        }
+        .error {
+            background: #ef4444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Upload Files or URLs</h1>
+
+    <form id="uploadForm">
+
+        <!-- File Upload Section -->
+        <div class="section">
+            <label for="files">Upload File(s):</label>
+            <input type="file" id="files" name="files" multiple accept=".pdf">
+            <div class="hint">You can select multiple PDF files</div>
+        </div>
+
+        <div style="text-align:center; margin: 30px 0; font-weight:bold; color:#555;">
+            — OR —
+        </div>
+
+        <!-- URL Section -->
+        <div class="section">
+            <label for="url_type">URL Type:</label>
+            <select id="url_type" name="url_type">
+                <option value="">-- Select type --</option>
+                <option value="youtube">YouTube video / playlist</option>
+                <option value="webpage">Web page / article</option>
+            </select>
+
+            <label for="url">Enter URL:</label>
+            <input type="url" id="url" name="url" placeholder="https://www.youtube.com/watch?v=...">
+            <div class="hint">Paste only one URL at a time</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button type="submit">Upload / Process</button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+    </form>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById("files");
+            const urlInput = document.getElementById("url");
+            const urlType = document.getElementById("url_type");
+            const messageDiv = document.getElementById("message");
+            
+            const formData = new FormData();
+            
+            // Add files if selected
+            if (fileInput.files.length > 0) {
+                for (let file of fileInput.files) {
+                    formData.append("files", file);
+                }
+            }
+            
+            // Add URL if provided
+            if (urlInput.value.trim()) {
+                formData.append("url", urlInput.value);
+                formData.append("url_type", urlType.value);
+            }
+            
+            // Check if something was selected
+            if (fileInput.files.length === 0 && !urlInput.value.trim()) {
+                messageDiv.textContent = "Please select files or provide a URL";
+                messageDiv.className = "message error";
+                messageDiv.style.display = "block";
+                return;
+            }
+            
+            try {
+                const response = await fetch("/upload", {
+                    method: "POST",
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === "success") {
+                    messageDiv.textContent = data.message + " - Redirecting to query page...";
+                    messageDiv.className = "message success";
+                    messageDiv.style.display = "block";
+                    
+                    // Reset form
+                    document.getElementById("uploadForm").reset();
+                    
+                    // Redirect after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = "/query";
+                    }, 2000);
+                } else {
+                    messageDiv.textContent = "Error: " + data.message;
+                    messageDiv.className = "message error";
+                    messageDiv.style.display = "block";
+                }
+            } catch (error) {
+                messageDiv.textContent = "Error: " + error.message;
+                messageDiv.className = "message error";
+                messageDiv.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

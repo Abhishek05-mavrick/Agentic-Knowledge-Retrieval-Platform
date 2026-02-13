@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: #020617;
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        input, select, button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+        }
+        button {
+            background: #38bdf8;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Submit Query</h2>
+    <p>Enter your query to analyze</p>
+
+    <input type="text" id="queryInput" placeholder="Type your query..." />
+
+    <select id="queryType">
+        <option value="search">Search</option>
+        <option value="analysis">Analysis</option>
+        <option value="prediction">Prediction</option>
+    </select>
+
+    <button onclick="submitQuery()">Run</button>
+    <a href="/" style="display:block; margin-top:15px; text-align:center; color:#38bdf8; text-decoration:none;">← Upload more documents</a>
+</div>
+
+<script>
+    function submitQuery() {
+        const query = document.getElementById("queryInput").value;
+        const type = document.getElementById("queryType").value;
+
+        if (!query.trim()) {
+            alert("Please enter a query");
+            return;
+        }
+
+        // Redirect to results page
+        window.location.href = `/results?q=${encodeURIComponent(query)}&type=${type}`;
+    }
+    
+    // Allow Enter key to submit
+    document.getElementById("queryInput").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            submitQuery();
+        }
+    });
+</script>
+
+</body>
+</html>

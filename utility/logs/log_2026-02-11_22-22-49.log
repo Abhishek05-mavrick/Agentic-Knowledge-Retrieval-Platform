@@ -1,0 +1,3 @@
+[2026-02-11 22:22:49,333] werkzeug - WARNING -  * Debugger is active!
+[2026-02-11 22:22:49,337] werkzeug - INFO -  * Debugger PIN: 130-625-207
+[2026-02-11 22:28:16,352] werkzeug - INFO -  * Detected change in 'C:\\Users\\manju\\OneDrive\\Documents\\front-end\\RAG\\backend\\app.py', reloading

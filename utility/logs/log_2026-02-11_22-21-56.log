@@ -1,0 +1,6 @@
+[2026-02-11 22:21:56,379] werkzeug - WARNING -  * Debugger is active!
+[2026-02-11 22:21:56,383] werkzeug - INFO -  * Debugger PIN: 130-625-207
+[2026-02-11 22:22:05,634] root - INFO - Uploading a file.
+[2026-02-11 22:22:05,642] werkzeug - INFO - 127.0.0.1 - - [11/Feb/2026 22:22:05] "GET / HTTP/1.1" 200 -
+[2026-02-11 22:22:27,594] werkzeug - INFO - 127.0.0.1 - - [11/Feb/2026 22:22:27] "[33mPOST /upload HTTP/1.1[0m" 404 -
+[2026-02-11 22:22:48,810] werkzeug - INFO -  * Detected change in 'C:\\Users\\manju\\OneDrive\\Documents\\front-end\\RAG\\backend\\app.py', reloading

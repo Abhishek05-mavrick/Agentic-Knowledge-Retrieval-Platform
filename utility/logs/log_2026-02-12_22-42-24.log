@@ -1,0 +1,44 @@
+[2026-02-12 22:42:24,424] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:42:24,445] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:42:24,468] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:42:24,469] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:42:29,069] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:42:29,071] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:42:33,030] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:42:33,878] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 22:42:34,190] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:42:34,191] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:42:38,453] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:42:38,464] utility.logger - INFO - inserting into db
+[2026-02-12 22:42:38,602] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 22:42:38,605] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db_test
+[2026-02-12 22:42:38,616] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:42:38,616] utility.logger - INFO - retrieval started
+[2026-02-12 22:42:38,626] utility.logger - INFO - no documents found
+[2026-02-12 22:42:38,626] utility.logger - INFO - prompt engineering started
+[2026-02-12 22:42:38,627] utility.logger - INFO - Invoking LLM
+[2026-02-12 22:42:39,371] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 22:42:39,389] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:42:39,389] utility.logger - INFO - retrieval started
+[2026-02-12 22:42:39,404] utility.logger - INFO - no documents found
+[2026-02-12 22:42:39,405] utility.logger - INFO - prompt engineering started
+[2026-02-12 22:42:39,405] utility.logger - INFO - Invoking LLM
+[2026-02-12 22:42:40,093] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 22:42:40,099] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:42:40,099] utility.logger - INFO - retrieval started
+[2026-02-12 22:42:40,114] utility.logger - INFO - no documents found
+[2026-02-12 22:42:40,114] utility.logger - INFO - prompt engineering started
+[2026-02-12 22:42:40,114] utility.logger - INFO - Invoking LLM
+[2026-02-12 22:42:43,476] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 22:42:43,481] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:42:43,481] utility.logger - INFO - retrieval started
+[2026-02-12 22:42:43,496] utility.logger - INFO - no documents found
+[2026-02-12 22:42:43,496] utility.logger - INFO - prompt engineering started
+[2026-02-12 22:42:43,496] utility.logger - INFO - Invoking LLM
+[2026-02-12 22:42:46,819] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2026-02-12 22:42:46,822] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:42:46,822] utility.logger - INFO - retrieval started
+[2026-02-12 22:42:46,833] utility.logger - INFO - no documents found
+[2026-02-12 22:42:46,834] utility.logger - INFO - prompt engineering started
+[2026-02-12 22:42:46,834] utility.logger - INFO - Invoking LLM
+[2026-02-12 22:42:47,467] httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

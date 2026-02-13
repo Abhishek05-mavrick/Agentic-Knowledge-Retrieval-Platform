@@ -1,0 +1,11 @@
+langchain
+langchain-community
+langchain-groq
+flask
+pypdf
+bs4
+groq
+dotenv
+langchain-text-splitters
+sentence-transformers
+faiss-cpu

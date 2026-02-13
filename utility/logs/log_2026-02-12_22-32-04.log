@@ -1,0 +1,8 @@
+[2026-02-12 22:32:04,296] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:32:04,314] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:32:04,328] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:32:04,330] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:32:08,811] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:32:08,812] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:32:12,579] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:32:12,766] langchain_community.vectorstores.faiss - WARNING - `embedding_function` is expected to be an Embeddings object, support for passing in a function will soon be removed.

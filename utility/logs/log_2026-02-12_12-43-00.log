@@ -1,0 +1,5 @@
+[2026-02-12 12:43:01,189] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 12:43:01,670] utility.logger - INFO - chunking started
+[2026-02-12 12:43:01,672] utility.logger - INFO - initializing embedding model
+[2026-02-12 12:43:01,679] utility.logger - ERROR - failed to initialize embedding model
+[2026-02-12 12:43:01,679] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\embedding.py] line number [23] error message [Could not import sentence_transformers python package. Please install it with `pip install sentence-transformers`.]

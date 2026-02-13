@@ -1,0 +1,29 @@
+[2026-02-12 23:01:45,192] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 23:01:45,214] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 23:01:45,229] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:01:45,230] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:01:49,715] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:01:49,717] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:01:53,854] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:01:54,606] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 23:01:54,886] utility.logger - INFO - initializing embedding model
+[2026-02-12 23:01:54,888] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 23:01:58,989] utility.logger - INFO - the FAISS DB started
+[2026-02-12 23:01:59,000] utility.logger - INFO - inserting into db
+[2026-02-12 23:01:59,159] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 23:01:59,161] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db_test
+[2026-02-12 23:01:59,175] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:01:59,175] utility.logger - INFO - retrieval started
+[2026-02-12 23:01:59,188] utility.logger - INFO - No documents found
+[2026-02-12 23:01:59,189] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:01:59,189] utility.logger - INFO - retrieval started
+[2026-02-12 23:01:59,198] utility.logger - INFO - No documents found
+[2026-02-12 23:01:59,199] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:01:59,199] utility.logger - INFO - retrieval started
+[2026-02-12 23:01:59,207] utility.logger - INFO - No documents found
+[2026-02-12 23:01:59,208] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:01:59,208] utility.logger - INFO - retrieval started
+[2026-02-12 23:01:59,221] utility.logger - INFO - No documents found
+[2026-02-12 23:01:59,222] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 23:01:59,222] utility.logger - INFO - retrieval started
+[2026-02-12 23:01:59,235] utility.logger - INFO - No documents found

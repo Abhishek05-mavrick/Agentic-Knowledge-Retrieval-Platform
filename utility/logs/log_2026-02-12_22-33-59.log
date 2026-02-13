@@ -1,0 +1,24 @@
+[2026-02-12 22:33:59,983] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:34:00,012] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:34:00,029] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:34:00,030] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:34:04,480] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:34:04,482] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:34:08,598] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:34:09,319] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 22:34:09,595] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:34:09,596] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:34:13,539] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:34:13,550] utility.logger - INFO - inserting into db
+[2026-02-12 22:34:13,745] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 22:34:13,748] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db_test
+[2026-02-12 22:34:13,760] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:34:13,760] utility.logger - INFO - retrieval started
+[2026-02-12 22:34:13,775] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:34:13,775] utility.logger - INFO - retrieval started
+[2026-02-12 22:34:13,787] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:34:13,787] utility.logger - INFO - retrieval started
+[2026-02-12 22:34:13,799] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:34:13,799] utility.logger - INFO - retrieval started
+[2026-02-12 22:34:13,812] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:34:13,812] utility.logger - INFO - retrieval started

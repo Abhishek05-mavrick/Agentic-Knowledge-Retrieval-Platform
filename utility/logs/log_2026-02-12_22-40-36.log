@@ -1,0 +1,29 @@
+[2026-02-12 22:40:36,539] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:40:36,558] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:40:36,574] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:40:36,575] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:40:41,037] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:40:41,038] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:40:45,100] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:40:45,888] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 22:40:46,148] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:40:46,150] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:40:50,033] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:40:50,045] utility.logger - INFO - inserting into db
+[2026-02-12 22:40:50,178] utility.logger - INFO - data added to db sucessfully
+[2026-02-12 22:40:50,180] utility.logger - INFO - DB saved locally to C:\Users\manju\OneDrive\Documents\front-end\RAG\vector_db_test
+[2026-02-12 22:40:50,196] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:40:50,196] utility.logger - ERROR - Generation failed: cannot access local variable 'documents' where it is not associated with a value
+[2026-02-12 22:40:50,196] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\gen.py] line number [30] error message [cannot access local variable 'documents' where it is not associated with a value]
+[2026-02-12 22:40:50,197] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:40:50,197] utility.logger - ERROR - Generation failed: cannot access local variable 'documents' where it is not associated with a value
+[2026-02-12 22:40:50,197] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\gen.py] line number [30] error message [cannot access local variable 'documents' where it is not associated with a value]
+[2026-02-12 22:40:50,198] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:40:50,198] utility.logger - ERROR - Generation failed: cannot access local variable 'documents' where it is not associated with a value
+[2026-02-12 22:40:50,198] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\gen.py] line number [30] error message [cannot access local variable 'documents' where it is not associated with a value]
+[2026-02-12 22:40:50,198] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:40:50,198] utility.logger - ERROR - Generation failed: cannot access local variable 'documents' where it is not associated with a value
+[2026-02-12 22:40:50,199] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\gen.py] line number [30] error message [cannot access local variable 'documents' where it is not associated with a value]
+[2026-02-12 22:40:50,199] utility.logger - INFO - Starting RAG generation flow
+[2026-02-12 22:40:50,199] utility.logger - ERROR - Generation failed: cannot access local variable 'documents' where it is not associated with a value
+[2026-02-12 22:40:50,199] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\gen.py] line number [30] error message [cannot access local variable 'documents' where it is not associated with a value]

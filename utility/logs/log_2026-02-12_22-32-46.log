@@ -1,0 +1,17 @@
+[2026-02-12 22:32:46,372] faiss.loader - INFO - Loading faiss with AVX2 support.
+[2026-02-12 22:32:46,391] faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+[2026-02-12 22:32:46,405] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:32:46,406] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:32:50,521] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:32:50,522] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:32:54,665] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:32:54,696] langchain_community.vectorstores.faiss - WARNING - `embedding_function` is expected to be an Embeddings object, support for passing in a function will soon be removed.
+[2026-02-12 22:32:55,464] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 22:32:55,858] utility.logger - INFO - initializing embedding model
+[2026-02-12 22:32:55,859] sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+[2026-02-12 22:33:00,167] utility.logger - INFO - the FAISS DB started
+[2026-02-12 22:33:00,183] langchain_community.vectorstores.faiss - WARNING - `embedding_function` is expected to be an Embeddings object, support for passing in a function will soon be removed.
+[2026-02-12 22:33:00,184] utility.logger - INFO - inserting into db
+[2026-02-12 22:33:00,184] utility.logger - INFO - failed to insert into db
+[2026-02-12 22:33:00,184] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\faiss_db.py] line number [40] error message ['Embedder' object is not callable]
+[2026-02-12 22:33:00,185] utility.logger - ERROR - Vector DB operation failed: Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\faiss_db.py] line number [40] error message ['Embedder' object is not callable]

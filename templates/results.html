@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #020617;
+            color: #e5e7eb;
+            padding: 40px;
+        }
+        .box {
+            background: #0f172a;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: auto;
+        }
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #22c55e;
+            color: #022c22;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Query Results</h2>
+    <p><strong>Input:</strong> <span id="queryText">{{ query }}</span></p>
+    <span class="badge" id="queryType">{{ query_type.upper() }}</span>
+
+    <hr>
+
+    <h3>Generated Output</h3>
+    <p id="output" style="white-space: pre-wrap; line-height: 1.6;">{{ answer }}</p>
+
+    <br>
+    <div style="display: flex; gap: 10px;">
+        <a href="/query" style="flex:1; text-align:center; color:#38bdf8; text-decoration:none;">← Run another query</a>
+        <a href="/" style="flex:1; text-align:center; color:#38bdf8; text-decoration:none;">Upload documents →</a>
+    </div>
+</div>
+
+<script>
+    // No need for AJAX - answer is already rendered on page
+</script>
+
+</body>
+</html>

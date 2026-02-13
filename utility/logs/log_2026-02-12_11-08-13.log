@@ -1,0 +1,4 @@
+[2026-02-12 11:08:13,478] utility.logger - INFO - starting pdf extraction: C:\Users\manju\OneDrive\Documents\front-end\RAG\uploads_pdf\Case Study.pdf
+[2026-02-12 11:08:13,749] utility.logger - INFO - chunking started
+[2026-02-12 11:08:13,749] utility.logger - INFO - chunking error has occured
+[2026-02-12 11:08:13,749] utility.logger - ERROR - Error occured in python script name [C:\Users\manju\OneDrive\Documents\front-end\RAG\services\chunking.py] line number [26] error message [expected string or bytes-like object, got 'Document']
