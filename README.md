@@ -2,6 +2,8 @@
 
 Production-oriented **multi-source RAG** application that ingests documents, web pages, videos & audio → builds a persistent vector knowledge base → and answers questions grounded **strictly** in the provided content using a powerful LLM.
 
+[![Untitled-Diagram-drawio.png](https://i.postimg.cc/1tzQ863C/Untitled-Diagram-drawio.png)](https://postimg.cc/R3288WfK)
+
 **Focus:** System design • Correct data flow • Real RAG engineering — not just calling an LLM API.
 
 ---
