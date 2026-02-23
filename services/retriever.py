@@ -1,6 +1,7 @@
 from typing import List
 import sys
 from pathlib import Path
+import math
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from langchain_core.prompts import PromptTemplate
@@ -19,14 +20,29 @@ vector_store = FAISSDB(embedder)
 vector_store.load_db("vector_db")
 
 
+def _get_similarity_store(store):
+    if hasattr(store, "similarity_search"):
+        return store
+    if hasattr(store, "vector_store") and hasattr(store.vector_store, "similarity_search"):
+        return store.vector_store
+    raise AttributeError(
+        "Retriever vector_store is not a valid LangChain FAISS store. "
+        "Expected either FAISSDB(wrapper) or FAISS(raw)."
+    )
+
+
 def prompt_retriever(query: str, k: int = 4) -> List[Document]:
     try:
         logger.info("retrieval started")
 
-        # FAISS + LangChain handles query embedding internally
-        results = vector_store.vector_store.similarity_search(
+        # Support both FAISSDB wrapper and raw LangChain FAISS objects
+        search_store = _get_similarity_store(vector_store)
+
+        # Stage 1: broader candidate retrieval
+        candidate_k = max(k * 3, 8)
+        results = search_store.similarity_search(
             query=query,
-            k=k
+            k=candidate_k
         )
 
         logger.info(f"Raw results retrieved: {len(results)}")
@@ -39,8 +55,32 @@ def prompt_retriever(query: str, k: int = 4) -> List[Document]:
             if content_length > 20:  # Reduced threshold from 50 to 20 to avoid filtering everything
                 filtered_results.append(doc)
 
-        logger.info(f"After filtering: {len(filtered_results)} documents")
-        return filtered_results
+        if not filtered_results:
+            logger.info("No documents after filtering")
+            return []
+
+        # Stage 2: semantic reranking (query-doc cosine similarity)
+        query_vec = embedder.embed_query(query)
+        doc_texts = [doc.page_content for doc in filtered_results]
+        doc_vecs = embedder.embed_documents(doc_texts)
+
+        def cosine(a: List[float], b: List[float]) -> float:
+            dot = sum(x * y for x, y in zip(a, b))
+            na = math.sqrt(sum(x * x for x in a))
+            nb = math.sqrt(sum(y * y for y in b))
+            if na == 0 or nb == 0:
+                return 0.0
+            return dot / (na * nb)
+
+        scored_docs = [
+            (cosine(query_vec, doc_vec), doc)
+            for doc_vec, doc in zip(doc_vecs, filtered_results)
+        ]
+        scored_docs.sort(key=lambda item: item[0], reverse=True)
+
+        reranked = [doc for _, doc in scored_docs[:k]]
+        logger.info(f"After reranking: {len(reranked)} documents")
+        return reranked
 
     except Exception as e:
         logger.error("failed to retrieve documents")

@@ -1,5 +1,10 @@
 langchain
 langchain-community
+langchain-huggingface
+langgraph
+langgraph-checkpoint-sqlite
+langgraph-checkpoint-postgres
+langsmith
 langchain-groq
 flask
 pypdf
@@ -9,3 +14,4 @@ dotenv
 langchain-text-splitters
 sentence-transformers
 faiss-cpu
+psycopg[binary]
