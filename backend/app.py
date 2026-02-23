@@ -11,6 +11,7 @@ from services.ingestion import pdf_extractor, web_extractor, yt_extractor_robust
 from services.chunking import re_te_sp
 from services.embedding import Embedder
 from services.faiss_db import FAISSDB
+from services import retriever
 from services.gen import get_answer
 from utility.logger import logger
 
@@ -22,6 +23,7 @@ app.config['UPLOAD_FOLDER'] = '../uploads_pdf'
 embedder = Embedder()
 vector_db = FAISSDB(embedder)
 vector_db.load_db("vector_db")  # Load existing DB if available
+retriever.vector_store = vector_db
 
 
 # Routes
@@ -84,6 +86,7 @@ def upload():
             
             # Save the updated DB
             vector_db.save_db("vector_db")
+            retriever.vector_store = vector_db
             logger.info("Documents indexed and saved to FAISS")
             
             return jsonify({
