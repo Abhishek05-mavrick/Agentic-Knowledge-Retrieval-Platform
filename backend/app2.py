@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import shutil
 import sqlite3
 import sys
 from datetime import datetime, timezone
@@ -16,7 +17,7 @@ from services.chunking import re_te_sp
 from services.faiss_db import FAISSDB
 from services.ingestion import audio_extractor, pdf_extractor, web_extractor, yt_extractor_robust
 from services.langgraph_agent import SimpleRAGLangGraphAgent
-from services.retriever import vector_store
+from services import retriever
 from utility.logger import logger
 
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -122,6 +123,50 @@ def _list_threads() -> list[dict]:
 
 def _ensure_upload_folder() -> None:
     os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+
+
+def _clear_sqlite_file(path: Path) -> None:
+    if not path.exists():
+        return
+    try:
+        with sqlite3.connect(str(path)) as connection:
+            cursor = connection.cursor()
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+            tables = [row[0] for row in cursor.fetchall() if row[0] != "sqlite_sequence"]
+            for table in tables:
+                cursor.execute(f'DELETE FROM "{table}"')
+            connection.commit()
+    except Exception:
+        pass
+
+    for suffix in ("", "-shm", "-wal"):
+        target = Path(f"{path}{suffix}")
+        if target.exists():
+            try:
+                target.unlink()
+            except Exception:
+                pass
+
+
+def _reset_all_data() -> dict:
+    vector_path = Path("vector_db")
+    if vector_path.exists() and vector_path.is_dir():
+        shutil.rmtree(vector_path, ignore_errors=True)
+
+    _clear_sqlite_file(Path("thread_metadata.sqlite"))
+    _clear_sqlite_file(Path("langgraph_memory.sqlite"))
+
+    try:
+        retriever.vector_store = FAISSDB(retriever.embedder)
+    except Exception as error:
+        logger.warning(f"Failed to reinitialize in-memory retriever store: {error}")
+
+    _init_thread_store()
+
+    return {
+        "status": "success",
+        "message": "All chat history, memory checkpoints, and vector database have been reset",
+    }
 
 
 @app.get("/")
@@ -231,9 +276,9 @@ def upload_api():
 
         chunks = re_te_sp(documents)
 
-        store = vector_store
-        if isinstance(vector_store, FAISSDB):
-            store = vector_store
+        store = retriever.vector_store
+        if isinstance(retriever.vector_store, FAISSDB):
+            store = retriever.vector_store
         store.load_into_db(chunks)
         store.save_db("vector_db")
 
@@ -252,7 +297,17 @@ def upload_api():
         return jsonify({"status": "error", "message": str(error)}), 500
 
 
+@app.post("/api/reset-all")
+def reset_all_api():
+    try:
+        result = _reset_all_data()
+        return jsonify(result), 200
+    except Exception as error:
+        logger.error(f"/api/reset-all failed: {error}")
+        return jsonify({"status": "error", "message": str(error)}), 500
+
+
 if __name__ == "__main__":
     _init_thread_store()
-    logger.info("Starting simple LangGraph RAG server on port 5001")
-    app.run(debug=True, host="0.0.0.0", port=5001)
+    logger.info("Starting simple LangGraph RAG server on port 8000")
+    app.run(debug=True, host="0.0.0.0", port=8000)

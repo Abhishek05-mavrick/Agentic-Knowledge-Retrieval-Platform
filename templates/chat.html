@@ -11,60 +11,109 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #0b1020;
+            --surface: #11182d;
+            --surface-2: #16213a;
+            --border: #27324d;
+            --text: #e8eefc;
+            --muted: #9ba8c7;
+            --primary: #6d8dff;
+            --primary-2: #4f6ee7;
+            --success: #26b38d;
+            --danger: #de5b66;
+            --shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
+            background: radial-gradient(1200px 600px at 10% -10%, #1a2850 0%, transparent 45%), var(--bg);
+            color: var(--text);
             display: flex;
             height: 100vh;
             overflow: hidden;
+            letter-spacing: 0.1px;
         }
 
         .sidebar {
-            width: 280px;
-            background: #1e293b;
-            border-right: 1px solid #334155;
+            width: 300px;
+            background: rgba(17, 24, 45, 0.92);
+            backdrop-filter: blur(8px);
+            border-right: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             overflow-y: auto;
+            box-shadow: var(--shadow);
         }
 
         .sidebar-header {
-            padding: 16px;
-            border-bottom: 1px solid #334155;
+            padding: 18px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .brand-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.3px;
+        }
+
+        .actions-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
         }
 
         .new-chat-btn {
             width: 100%;
             padding: 10px 14px;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
-        .new-chat-btn:hover {
-            opacity: 0.9;
+        .reset-btn {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(222, 91, 102, 0.15);
+            color: #ffd7da;
+            border: 1px solid rgba(222, 91, 102, 0.35);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .new-chat-btn:hover,
+        .reset-btn:hover {
             transform: translateY(-1px);
         }
 
+        .reset-btn:hover {
+            background: rgba(222, 91, 102, 0.22);
+        }
+
         .upload-section {
-            padding: 16px;
-            border-bottom: 1px solid #334155;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .upload-label {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #94a3b8;
+            letter-spacing: 0.9px;
+            color: var(--muted);
         }
 
         .upload-inputs {
@@ -76,17 +125,25 @@
         input[type="file"],
         input[type="url"],
         select {
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #475569;
-            background: #0f172a;
-            color: #e2e8f0;
+            padding: 9px 10px;
+            border-radius: 9px;
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            color: var(--text);
             font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="file"]:focus,
+        input[type="url"]:focus,
+        select:focus {
+            border-color: var(--primary);
         }
 
         input[type="file"]::file-selector-button {
-            background: #334155;
-            color: #e2e8f0;
+            background: #24314f;
+            color: var(--text);
             border: none;
             padding: 4px 8px;
             border-radius: 4px;
@@ -96,15 +153,15 @@
         }
 
         .upload-btn {
-            padding: 8px 12px;
-            background: #10b981;
+            padding: 10px 12px;
+            background: var(--success);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 9px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.2s;
+            transition: opacity 0.2s;
         }
 
         .upload-btn:hover {
@@ -112,26 +169,26 @@
         }
 
         .threads-label {
-            padding: 16px 16px 8px;
-            font-size: 0.85rem;
+            padding: 14px 18px 8px;
+            font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #94a3b8;
+            letter-spacing: 0.9px;
+            color: var(--muted);
         }
 
         .threads-list {
             flex: 1;
             overflow-y: auto;
-            padding: 8px;
+            padding: 8px 10px 12px;
         }
 
         .thread-item {
             padding: 12px 14px;
             margin-bottom: 6px;
-            background: #0f172a;
-            border: 1px solid transparent;
-            border-radius: 8px;
+            background: rgba(16, 24, 44, 0.55);
+            border: 1px solid rgba(39, 50, 77, 0.55);
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
             text-align: left;
@@ -140,13 +197,13 @@
         }
 
         .thread-item:hover {
-            background: #1e293b;
-            border-color: #475569;
+            background: rgba(22, 33, 58, 0.9);
+            border-color: #3a4c76;
         }
 
         .thread-item.active {
-            background: #1e40af;
-            border-color: #3b82f6;
+            background: rgba(79, 110, 231, 0.2);
+            border-color: var(--primary);
         }
 
         .thread-title {
@@ -157,23 +214,45 @@
 
         .thread-time {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--muted);
         }
 
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            background: #0f172a;
+            background: transparent;
+        }
+
+        .main-topbar {
+            height: 64px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background: rgba(17, 24, 45, 0.65);
+            backdrop-filter: blur(6px);
+        }
+
+        .main-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .main-subtitle {
+            font-size: 0.8rem;
+            color: var(--muted);
         }
 
         .chat-area {
             flex: 1;
             overflow-y: auto;
-            padding: 20px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
         .message {
@@ -197,22 +276,23 @@
         }
 
         .message-content {
-            max-width: 75%;
-            padding: 12px 16px;
-            border-radius: 12px;
+            max-width: min(78%, 860px);
+            padding: 12px 14px;
+            border-radius: 14px;
             word-wrap: break-word;
             line-height: 1.5;
         }
 
         .user .message-content {
-            background: #3b82f6;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
             color: white;
+            box-shadow: 0 8px 20px rgba(79, 110, 231, 0.26);
         }
 
         .assistant .message-content {
-            background: #1f2937;
-            color: #e2e8f0;
-            border: 1px solid #374151;
+            background: rgba(17, 24, 45, 0.92);
+            color: var(--text);
+            border: 1px solid var(--border);
         }
 
         .assistant .message-content p,
@@ -255,8 +335,8 @@
         }
 
         .assistant .message-content pre {
-            background: #0b1220;
-            border: 1px solid #334155;
+            background: #0a1329;
+            border: 1px solid var(--border);
             border-radius: 10px;
             padding: 12px;
             overflow-x: auto;
@@ -265,7 +345,7 @@
         .assistant .message-content code {
             font-family: Consolas, Monaco, 'Courier New', monospace;
             font-size: 0.9em;
-            background: rgba(148, 163, 184, 0.15);
+            background: rgba(109, 141, 255, 0.18);
             padding: 1px 5px;
             border-radius: 6px;
         }
@@ -276,9 +356,9 @@
         }
 
         .assistant .message-content blockquote {
-            border-left: 3px solid #64748b;
+            border-left: 3px solid var(--primary);
             padding-left: 10px;
-            color: #cbd5e1;
+            color: #ced8f3;
         }
 
         .assistant .message-content table {
@@ -289,51 +369,52 @@
 
         .assistant .message-content th,
         .assistant .message-content td {
-            border: 1px solid #475569;
+            border: 1px solid #3b4a70;
             padding: 7px;
             text-align: left;
         }
 
         .assistant .message-content th {
-            background: #273449;
+            background: #1b2848;
         }
 
         .assistant .message-content a {
-            color: #93c5fd;
+            color: #a8c1ff;
             text-decoration: underline;
         }
 
         .input-area {
-            padding: 16px;
-            border-top: 1px solid #334155;
+            padding: 14px 20px 18px;
+            border-top: 1px solid var(--border);
             display: flex;
             gap: 8px;
+            background: rgba(17, 24, 45, 0.65);
         }
 
         .input-area input {
             flex: 1;
             padding: 12px 16px;
-            background: #1e293b;
-            border: 1px solid #475569;
-            border-radius: 20px;
-            color: #e2e8f0;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
             outline: none;
             transition: border-color 0.2s;
         }
 
         .input-area input:focus {
-            border-color: #3b82f6;
+            border-color: var(--primary);
         }
 
         .input-area button {
-            padding: 10px 20px;
-            background: #3b82f6;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
             color: white;
             border: none;
-            border-radius: 20px;
+            border-radius: 12px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: opacity 0.2s;
         }
 
         .input-area button:hover {
@@ -347,37 +428,47 @@
             height: 100%;
             flex-direction: column;
             gap: 12px;
-            color: #64748b;
+            color: var(--muted);
+            border: 1px dashed rgba(59, 76, 118, 0.55);
+            border-radius: 14px;
+            background: rgba(12, 19, 36, 0.45);
         }
 
         .empty-state h2 {
-            color: #cbd5e1;
+            color: #cfd9f5;
         }
 
         .status-msg {
             padding: 8px 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 0.9rem;
             margin: 0 0 8px;
+            border: 1px solid transparent;
         }
 
         .status-msg.success {
-            background: rgba(16, 185, 129, 0.2);
-            color: #a7f3d0;
+            background: rgba(38, 179, 141, 0.2);
+            color: #baf6e5;
+            border-color: rgba(38, 179, 141, 0.35);
         }
 
         .status-msg.error {
-            background: rgba(239, 68, 68, 0.2);
-            color: #fecaca;
+            background: rgba(222, 91, 102, 0.2);
+            color: #ffd5d9;
+            border-color: rgba(222, 91, 102, 0.38);
         }
 
         @media (max-width: 768px) {
             .sidebar {
-                width: 200px;
+                width: 230px;
             }
 
             .message-content {
                 max-width: 90%;
+            }
+
+            .main-topbar {
+                padding: 0 12px;
             }
         }
 
@@ -390,12 +481,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #475569;
+            background: #314062;
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+            background: #3d4f79;
         }
     </style>
 </head>
@@ -403,7 +494,11 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <button class="new-chat-btn" onclick="createNewThread()">+ New Chat</button>
+            <div class="brand-title">RAG Workspace</div>
+            <div class="actions-row">
+                <button class="new-chat-btn" onclick="createNewThread()">+ New Chat</button>
+                <button class="reset-btn" onclick="resetAllData()">Reset All Data</button>
+            </div>
         </div>
 
         <div class="upload-section">
@@ -427,6 +522,13 @@
 
     <!-- Main Chat Area -->
     <div class="main-content">
+        <div class="main-topbar">
+            <div>
+                <div class="main-title">Chat Assistant</div>
+                <div class="main-subtitle">Grounded responses from your indexed knowledge base</div>
+            </div>
+        </div>
+
         <div class="chat-area" id="chatArea">
             <div class="empty-state">
                 <h2>Welcome to RAG Chat</h2>
@@ -494,6 +596,46 @@
                 loadThreads();
             } catch (error) {
                 console.error('Failed to create thread:', error);
+            }
+        }
+
+        async function resetAllData() {
+            const confirmed = window.confirm(
+                'This will permanently delete all chat threads, memory, and vector database content. Continue?'
+            );
+            if (!confirmed) return;
+
+            const statusDiv = document.getElementById('uploadStatus');
+            try {
+                statusDiv.className = 'status-msg';
+                statusDiv.textContent = 'Resetting all data...';
+                statusDiv.style.display = 'block';
+
+                const res = await fetch('/api/reset-all', { method: 'POST' });
+                const data = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(data.message || data.error || 'Failed to reset data');
+                }
+
+                currentThreadId = null;
+                document.getElementById('chatArea').innerHTML = `
+                    <div class="empty-state">
+                        <h2>Workspace Cleared</h2>
+                        <p>All chats and vector data were reset successfully</p>
+                    </div>
+                `;
+
+                statusDiv.className = 'status-msg success';
+                statusDiv.textContent = `✓ ${data.message}`;
+                document.getElementById('uploadFiles').value = '';
+                document.getElementById('uploadUrl').value = '';
+                document.getElementById('urlType').value = '';
+                await loadThreads();
+            } catch (error) {
+                statusDiv.className = 'status-msg error';
+                statusDiv.textContent = `✗ ${error.message}`;
+                statusDiv.style.display = 'block';
             }
         }
 
