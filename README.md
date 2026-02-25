@@ -1,4 +1,4 @@
-# Multi-Model RAG (LangGraph + Flask)
+# Agentic Knowledge Retrieval Platform(FLASK+LangGraph)
 
 A simple, customizable RAG chat application with:
 - LangGraph agent flow
